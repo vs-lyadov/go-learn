@@ -24,7 +24,17 @@ func main() {
 	fmt.Printf("I live in %s, %s.\n", city, country)
 
 	printIntegers()
+	printFloats()
 
+}
+
+func printFloats() {
+	fmt.Println("Floats:")
+	var a float32 = 3.14
+	var b float64 = 2.71828
+
+	fmt.Printf("float32: %.2f\n", a)
+	fmt.Printf("float64: %.5f\n", b)
 }
 
 func printIntegers() {
