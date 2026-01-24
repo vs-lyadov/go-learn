@@ -25,6 +25,21 @@ func main() {
 
 	printAllTypes()
 	printConstants()
+	printIota()
+
+}
+
+func printIota() {
+	const (
+		a = iota
+		b
+		c
+	)
+
+	fmt.Println("\niota:")
+	fmt.Printf("a: %d (type: %T)\n", a, a)
+	fmt.Printf("b: %d (type: %T)\n", b, b)
+	fmt.Printf("c: %d (type: %T)\n", c, c)
 }
 
 func printConstants() {
