@@ -25,7 +25,17 @@ func main() {
 
 	printIntegers()
 	printFloats()
+	printComplex()
 
+}
+
+func printComplex() {
+	fmt.Println("Complex:")
+	var a complex64 = 1 + 2i
+	var b complex128 = 3 + 4i
+
+	fmt.Printf("complex64: %v\n", a)
+	fmt.Printf("complex128: %v\n", b)
 }
 
 func printFloats() {
