@@ -23,12 +23,25 @@ func main() {
 	fmt.Printf("Username: %s\n", name)
 	fmt.Printf("I live in %s, %s.\n", city, country)
 
+	printAllTypes()
+	printConstants()
+}
+
+func printConstants() {
+	const pi float64 = 3.14
+	const e float64 = 2.71828
+
+	fmt.Println("\nConstants:")
+	fmt.Printf("pi: %.2f (type: %T)\n", pi, pi)
+	fmt.Printf("e: %.5f (type: %T)\n", e, e)
+}
+
+func printAllTypes() {
 	printIntegers()
 	printFloats()
 	printComplex()
 	printBool()
 	printString()
-
 }
 
 func printString() {
