@@ -24,9 +24,23 @@ func main() {
 	fmt.Printf("I live in %s, %s.\n", city, country)
 
 	printAllTypes()
+
+	fmt.Println("\nBitwise shift:")
+	var i int = 8
+	fmt.Printf("%d (type: %T)\n", i<<1, i)
+	fmt.Printf("%d (type: %T)\n", i>>2, i)
+
+}
+
+func printAllTypes() {
+	printIntegers()
+	printFloats()
+	printComplex()
+	printBool()
+	printString()
+
 	printConstants()
 	printIota()
-
 }
 
 func printIota() {
@@ -49,14 +63,6 @@ func printConstants() {
 	fmt.Println("\nConstants:")
 	fmt.Printf("pi: %.2f (type: %T)\n", pi, pi)
 	fmt.Printf("e: %.5f (type: %T)\n", e, e)
-}
-
-func printAllTypes() {
-	printIntegers()
-	printFloats()
-	printComplex()
-	printBool()
-	printString()
 }
 
 func printString() {
