@@ -27,11 +27,19 @@ func main() {
 	printFloats()
 	printComplex()
 	printBool()
+	printString()
 
 }
 
+func printString() {
+	fmt.Println("\nString:")
+	var a string = "Hello, World!"
+
+	fmt.Printf("string: %s\n", a)
+}
+
 func printBool() {
-	fmt.Println("Bool:")
+	fmt.Println("\nBool:")
 	var a bool = true
 	var b bool = false
 
@@ -40,7 +48,7 @@ func printBool() {
 }
 
 func printComplex() {
-	fmt.Println("Complex:")
+	fmt.Println("\nComplex:")
 	var a complex64 = 1 + 2i
 	var b complex128 = 3 + 4i
 
@@ -49,11 +57,11 @@ func printComplex() {
 }
 
 func printFloats() {
-	fmt.Println("Floats:")
+	fmt.Println("\nFloats:")
 	var a float32 = 3.14
 	var b float64 = 2.71828
 
-	fmt.Printf("float32: %.2f\n", a)
+	fmt.Printf("\nfloat32: %.2f\n", a)
 	fmt.Printf("float64: %.5f\n", b)
 }
 
