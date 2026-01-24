@@ -35,7 +35,7 @@ func printString() {
 	fmt.Println("\nString:")
 	var a string = "Hello, World!"
 
-	fmt.Printf("string: %s\n", a)
+	fmt.Printf("string: %s (type: %T)\n", a, a)
 }
 
 func printBool() {
@@ -43,8 +43,8 @@ func printBool() {
 	var a bool = true
 	var b bool = false
 
-	fmt.Printf("bool: %t\n", a)
-	fmt.Printf("bool: %t\n", b)
+	fmt.Printf("bool: %t (type: %T)\n", a, a)
+	fmt.Printf("bool: %t (type: %T)\n", b, b)
 }
 
 func printComplex() {
@@ -52,8 +52,8 @@ func printComplex() {
 	var a complex64 = 1 + 2i
 	var b complex128 = 3 + 4i
 
-	fmt.Printf("complex64: %v\n", a)
-	fmt.Printf("complex128: %v\n", b)
+	fmt.Printf("complex64: %v (type: %T)\n", a, a)
+	fmt.Printf("complex128: %v (type: %T)\n", b, b)
 }
 
 func printFloats() {
@@ -61,8 +61,8 @@ func printFloats() {
 	var a float32 = 3.14
 	var b float64 = 2.71828
 
-	fmt.Printf("\nfloat32: %.2f\n", a)
-	fmt.Printf("float64: %.5f\n", b)
+	fmt.Printf("\nfloat32: %.2f (type: %T)\n", a, a)
+	fmt.Printf("float64: %.5f (type: %T)\n", b, b)
 }
 
 func printIntegers() {
@@ -83,16 +83,16 @@ func printIntegers() {
 	var k int = 2147483647
 	var l uint = 4294967295
 
-	fmt.Printf("int8: %d\n", a)
-	fmt.Printf("int16: %d\n", b)
-	fmt.Printf("int32: %d\n", c)
-	fmt.Printf("int64: %d\n", d)
-	fmt.Printf("uint8: %d\n", e)
-	fmt.Printf("uint16: %d\n", f)
-	fmt.Printf("uint32: %d\n", g)
-	fmt.Printf("uint64: %d\n", h)
-	fmt.Printf("byte: %d\n", i)
-	fmt.Printf("rune: %d\n", j)
-	fmt.Printf("int: %d\n", k)
-	fmt.Printf("uint: %d\n", l)
+	fmt.Printf("int8: %d (type: %T)\n", a, a)
+	fmt.Printf("int16: %d (type: %T)\n", b, b)
+	fmt.Printf("int32: %d (type: %T)\n", c, c)
+	fmt.Printf("int64: %d (type: %T)\n", d, d)
+	fmt.Printf("uint8: %d (type: %T)\n", e, e)
+	fmt.Printf("uint16: %d (type: %T)\n", f, f)
+	fmt.Printf("uint32: %d (type: %T)\n", g, g)
+	fmt.Printf("uint64: %d (type: %T)\n", h, h)
+	fmt.Printf("byte: %d (type: %T)\n", i, i)
+	fmt.Printf("rune: %d (type: %T)\n", j, j)
+	fmt.Printf("int: %d (type: %T)\n", k, k)
+	fmt.Printf("uint: %d (type: %T)\n", l, l)
 }
