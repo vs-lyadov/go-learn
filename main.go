@@ -26,7 +26,17 @@ func main() {
 	printIntegers()
 	printFloats()
 	printComplex()
+	printBool()
 
+}
+
+func printBool() {
+	fmt.Println("Bool:")
+	var a bool = true
+	var b bool = false
+
+	fmt.Printf("bool: %t\n", a)
+	fmt.Printf("bool: %t\n", b)
 }
 
 func printComplex() {
