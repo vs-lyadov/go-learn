@@ -23,13 +23,24 @@ func main() {
 	fmt.Printf("Username: %s\n", name)
 	fmt.Printf("I live in %s, %s.\n", city, country)
 
+	var skills []string = []string{"Go", "PHP", "JavaScript"}
+	fmt.Printf("Skills: %v\n", skills)
+
+	if len(skills) > 0 {
+		fmt.Printf("Best skill: %s\n", skills[0])
+	}
+
+	switch len(skills) {
+	case 0:
+		fmt.Println("No skills")
+		fallthrough
+	case 1:
+		fmt.Println("One skill")
+	default:
+		fmt.Printf("%d skills\n", len(skills))
+	}
+
 	printAllTypes()
-
-	fmt.Println("\nBitwise shift:")
-	var i int = 8
-	fmt.Printf("%d (type: %T)\n", i<<1, i)
-	fmt.Printf("%d (type: %T)\n", i>>2, i)
-
 }
 
 func printAllTypes() {
@@ -41,6 +52,25 @@ func printAllTypes() {
 
 	printConstants()
 	printIota()
+	printBitwiseShift()
+	printArray()
+
+}
+
+func printArray() {
+	numbers := [3][3]int{
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
+	}
+
+	fmt.Printf("Numbers: %v\n", numbers)
+}
+
+func printBitwiseShift() {
+	var i int = 8
+	fmt.Printf("%d (type: %T)\n", i<<1, i)
+	fmt.Printf("%d (type: %T)\n", i>>2, i)
 }
 
 func printIota() {
@@ -100,7 +130,7 @@ func printFloats() {
 }
 
 func printIntegers() {
-	fmt.Println("Integers:")
+	fmt.Println("\nIntegers:")
 	var a int8 = 127
 	var b int16 = 32767
 	var c int32 = 2147483647
