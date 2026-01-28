@@ -59,6 +59,18 @@ func printFunctions() {
 
 	add := func(a, b int) int { return a + b }
 	fmt.Printf("add(1, 2): %d (type: %T)\n", add(1, 2), add(1, 2))
+
+	f := outer()
+	f()
+	f()
+}
+
+func outer() func() {
+	var x = 10
+	return func() {
+		x++
+		fmt.Println(x)
+	}
 }
 
 func sum(numbers ...int) (result int, randStr int32) {
