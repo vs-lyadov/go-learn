@@ -51,14 +51,14 @@ func main() {
 
 func printFunctions() {
 	fmt.Println("\nFunctions:")
-	var a, randInt1 = sum(1, 2, 3)
-	fmt.Printf("sum(1, 2, 3): %d (type: %T)\n", a, a)
-	fmt.Printf("rand: %d (type: %T)\n", randInt1, randInt1)
 
 	var nums = []int{1, 2, 3, 4, 5}
-	var b, randInt2 = sum(nums...)
+	var b, randInt = sum(nums...)
 	fmt.Printf("sum(nums...): %d (type: %T)\n", b, b)
-	fmt.Printf("rand2: %d (type: %T)\n", randInt2, randInt2)
+	fmt.Printf("rand: %d (type: %T)\n", randInt, randInt)
+
+	add := func(a, b int) int { return a + b }
+	fmt.Printf("add(1, 2): %d (type: %T)\n", add(1, 2), add(1, 2))
 }
 
 func sum(numbers ...int) (result int, randStr int32) {
