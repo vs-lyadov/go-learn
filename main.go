@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func main() {
 	// Chapter 1
@@ -47,20 +51,23 @@ func main() {
 
 func printFunctions() {
 	fmt.Println("\nFunctions:")
-	var a = sum(1, 2, 3)
+	var a, randInt1 = sum(1, 2, 3)
 	fmt.Printf("sum(1, 2, 3): %d (type: %T)\n", a, a)
+	fmt.Printf("rand: %d (type: %T)\n", randInt1, randInt1)
 
 	var nums = []int{1, 2, 3, 4, 5}
-	var b = sum(nums...)
+	var b, randInt2 = sum(nums...)
 	fmt.Printf("sum(nums...): %d (type: %T)\n", b, b)
+	fmt.Printf("rand2: %d (type: %T)\n", randInt2, randInt2)
 }
 
-func sum(numbers ...int) int {
-	var result int
+func sum(numbers ...int) (result int, randStr int32) {
 	for _, num := range numbers {
 		result += num
 	}
-	return result
+
+	randStr = rand.New(rand.NewSource(time.Now().UnixNano())).Int31()
+	return
 }
 
 func printLoops() {
