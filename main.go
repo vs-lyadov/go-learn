@@ -9,21 +9,21 @@ func main() {
 
 	// Chapter 2
 	fmt.Println("# Chapter 2")
-	var name string = "vs-lyadov"
-	var age int = 25
+	var name = "vs-lyadov"
+	var age = 25
 
-	var firstname, lastname string = "Vyacheslav", "Lyadov"
+	var firstname, lastname = "Vyacheslav", "Lyadov"
 
 	var (
-		country string = "Russia"
-		city    string = "Bryansk"
+		country = "Russia"
+		city    = "Bryansk"
 	)
 
 	fmt.Printf("My name is %s %s. I'm %d years old.\n", firstname, lastname, age)
 	fmt.Printf("Username: %s\n", name)
 	fmt.Printf("I live in %s, %s.\n", city, country)
 
-	var skills []string = []string{"Go", "PHP", "JavaScript"}
+	var skills = []string{"Go", "PHP", "JavaScript"}
 	fmt.Printf("Skills: %v\n", skills)
 
 	if len(skills) > 0 {
@@ -41,6 +41,51 @@ func main() {
 	}
 
 	printAllTypes()
+	printLoops()
+}
+
+func printLoops() {
+	for i := 0; i < 5; i++ {
+		fmt.Printf("Loop i = %d\n", i)
+	}
+
+	for i := 1; i < 10; i++ {
+		for j := 1; j < 10; j++ {
+			fmt.Print(i*j, "\t")
+		}
+		fmt.Println()
+	}
+
+	str := "Hello, World!"
+	for _, val := range str {
+		fmt.Printf("%c", val)
+	}
+	fmt.Println()
+
+	var users = []string{"vs-lyadov", "john_doe", "jane_smith"}
+	for i, user := range users {
+		fmt.Printf("Index: %d, User: %s", i, user)
+
+		if user == "vs-lyadov" {
+			fmt.Print(" — это я!")
+		}
+
+		fmt.Println()
+	}
+
+	for i := 0; i < len(users); i++ {
+		if users[i] == "john_doe" {
+			continue
+		}
+
+		if users[i] == "jane_smith" {
+			break
+		}
+
+		fmt.Printf("User: %s\n", users[i])
+
+	}
+
 }
 
 func printAllTypes() {
@@ -54,7 +99,6 @@ func printAllTypes() {
 	printIota()
 	printBitwiseShift()
 	printArray()
-
 }
 
 func printArray() {
@@ -68,7 +112,7 @@ func printArray() {
 }
 
 func printBitwiseShift() {
-	var i int = 8
+	var i = 8
 	fmt.Printf("%d (type: %T)\n", i<<1, i)
 	fmt.Printf("%d (type: %T)\n", i>>2, i)
 }
@@ -97,15 +141,15 @@ func printConstants() {
 
 func printString() {
 	fmt.Println("\nString:")
-	var a string = "Hello, World!"
+	var a = "Hello, World!"
 
 	fmt.Printf("string: %s (type: %T)\n", a, a)
 }
 
 func printBool() {
 	fmt.Println("\nBool:")
-	var a bool = true
-	var b bool = false
+	var a = true
+	var b = false
 
 	fmt.Printf("bool: %t (type: %T)\n", a, a)
 	fmt.Printf("bool: %t (type: %T)\n", b, b)
@@ -114,7 +158,7 @@ func printBool() {
 func printComplex() {
 	fmt.Println("\nComplex:")
 	var a complex64 = 1 + 2i
-	var b complex128 = 3 + 4i
+	var b = 3 + 4i
 
 	fmt.Printf("complex64: %v (type: %T)\n", a, a)
 	fmt.Printf("complex128: %v (type: %T)\n", b, b)
@@ -123,7 +167,7 @@ func printComplex() {
 func printFloats() {
 	fmt.Println("\nFloats:")
 	var a float32 = 3.14
-	var b float64 = 2.71828
+	var b = 2.71828
 
 	fmt.Printf("\nfloat32: %.2f (type: %T)\n", a, a)
 	fmt.Printf("float64: %.5f (type: %T)\n", b, b)
@@ -144,7 +188,7 @@ func printIntegers() {
 	var i byte = 255
 	var j rune = 2147483647
 
-	var k int = 2147483647
+	var k = 2147483647
 	var l uint = 4294967295
 
 	fmt.Printf("int8: %d (type: %T)\n", a, a)
