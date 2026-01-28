@@ -60,12 +60,34 @@ func printFunctions() {
 	add := func(a, b int) int { return a + b }
 	fmt.Printf("add(1, 2): %d (type: %T)\n", add(1, 2), add(1, 2))
 
-	f := outer()
+	f := closure()
 	f()
 	f()
+
+	fmt.Printf("factorial(10): %d \n", factorial(10))
+	fmt.Printf("fibonacci(10): %d \n", fibonacci(10))
+
 }
 
-func outer() func() {
+func fibonacci(n uint) uint {
+	if n == 0 {
+		return 0
+	}
+	if n == 1 {
+		return 1
+	}
+	return fibonacci(n-1) + fibonacci(n-2)
+}
+
+func factorial(n uint) uint {
+	if n == 0 {
+		return 1
+	}
+
+	return n * factorial(n-1)
+}
+
+func closure() func() {
 	var x = 10
 	return func() {
 		x++
