@@ -46,6 +46,9 @@ func main() {
 
 	printAllTypes()
 	printLoops()
+
+	// Chapter 3
+	fmt.Println("# Chapter 3")
 	printFunctions()
 }
 
