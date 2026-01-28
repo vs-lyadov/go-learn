@@ -42,6 +42,25 @@ func main() {
 
 	printAllTypes()
 	printLoops()
+	printFunctions()
+}
+
+func printFunctions() {
+	fmt.Println("\nFunctions:")
+	var a = sum(1, 2, 3)
+	fmt.Printf("sum(1, 2, 3): %d (type: %T)\n", a, a)
+
+	var nums = []int{1, 2, 3, 4, 5}
+	var b = sum(nums...)
+	fmt.Printf("sum(nums...): %d (type: %T)\n", b, b)
+}
+
+func sum(numbers ...int) int {
+	var result int
+	for _, num := range numbers {
+		result += num
+	}
+	return result
 }
 
 func printLoops() {
