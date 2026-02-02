@@ -88,6 +88,15 @@ func printPointers() {
 	nums[3] = &d
 	fmt.Printf("nums: %v (type: %T)\n", nums, nums)
 
+	var ptr = sumAndCreatePointers(&a, &b)
+	fmt.Printf("a: %v (type: %T)\n", a, a)
+	fmt.Printf("*ptr: %d (type: %T)\n", *ptr, *ptr)
+}
+
+func sumAndCreatePointers(a, b *int) *int {
+	*a = *a + *b
+	var ptr = new(int)
+	return ptr
 }
 
 func printFunctions() {
