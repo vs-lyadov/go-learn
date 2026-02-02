@@ -50,6 +50,44 @@ func main() {
 	// Chapter 3
 	fmt.Println("# Chapter 3")
 	printFunctions()
+
+	// Chapter 4
+	fmt.Println("# Chapter 4")
+	printPointers()
+}
+
+func printPointers() {
+	var x = 10
+	var p *int
+
+	p = &x
+	fmt.Printf("x: %d (type: %T)\n", x, x)
+	fmt.Printf("p: %v (type: %T)\n", p, p)
+	fmt.Printf("*p: %d (type: %T)\n", *p, *p)
+
+	*p = 20
+	fmt.Printf("x: %d (type: %T)\n", x, x)
+
+	var pointer *float64
+
+	if pointer == nil {
+		fmt.Println("pointer is nil")
+		pointer = new(float64)
+		*pointer = 3.14
+	} else {
+		fmt.Println("pointer is not nil")
+	}
+
+	fmt.Printf("pointer: %v (type: %T)\n", pointer, pointer)
+	fmt.Printf("*pointer: %f (type: %T)\n", *pointer, *pointer)
+
+	var a, b, d = 1, 2, 4
+	var nums [4]*int
+	nums[0] = &a
+	nums[1] = &b
+	nums[3] = &d
+	fmt.Printf("nums: %v (type: %T)\n", nums, nums)
+
 }
 
 func printFunctions() {
